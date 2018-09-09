@@ -10,9 +10,11 @@ const resolve = operations => {
 
 export default (state, action) => {
   switch(action.type) {
+    case 'clear':
+      return { queue: [] };
     case 'off':
       return { on: false };
-    case 'clear':
+    case 'allClear':
       return {
         operations: [],
         queue: [],
