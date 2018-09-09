@@ -1,0 +1,62 @@
+.button {
+  border: none;
+  padding: 0;
+  width: 52px;
+  height: 45px;
+  outline: none;
+  margin: 4px;
+  background: black;
+  color: white;
+  font-size: 30px;
+  border-radius: 8px 8px 14px 14px;
+}
+
+/**
+ * Size modifier
+ */
+.button--small {
+  height: 35px;
+  font-size: 20px;
+}
+
+.button--big {
+  height: 100px;
+}
+
+/**
+ * Type modifier
+ */
+.button--clear {
+  background-color: red;
+}
+
+.button--clearAll {
+  background-color: red;
+  border-left: 5px solid black;
+  border-right: 5px solid black;
+  position: relative;
+}
+
+.button--clearAll::after {
+  content: 'ON';
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: initial;
+  color: initial;
+}
+
+/* Memory buttons */
+.button--clearMemory,
+.button--recallMemory,
+.button--addToMemory {
+  font-size: 20px;
+}
+
+.button--operator,
+.button--plusNegative {
+  font-size: 35px;
+  vertical-align: text-top;
+}

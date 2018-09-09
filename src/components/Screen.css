@@ -1,0 +1,15 @@
+.screen {
+  background-color: red;
+  position: relative;
+  justify-content: center;
+  margin: 0 10px;
+  border-radius: 10px;
+}
+
+.screen__lcd {
+  background-color: blue;
+  margin: 15px 15px 25px;
+  height: 95px;
+  line-height: 95px;
+  text-align: right;
+}

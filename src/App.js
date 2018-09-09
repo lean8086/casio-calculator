@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import Display from './components/Display';
+import './App.css';
+import Header from './components/Header';
+import Screen from './components/Screen';
 import Buttons from './components/Buttons';
 import reduce from './reducers';
 
@@ -15,15 +17,16 @@ class App extends Component {
 
   render() {
     return (
-      <div className="calculator">
-        <Display
+      <main className="calculator" role="main">
+        <Header />
+        <Screen
           disabled={!this.state.on}
           value={this.state.queue.join('') || 0}
         />
         <Buttons
           onClick={action => this.setState(reduce(this.state, action))}
         />
-      </div>
+      </main>
     );
   }
 }

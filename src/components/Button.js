@@ -1,14 +1,15 @@
 import React from 'react';
+import './Button.css';
 
 export default ({
-  modifier,
+  size,
   value,
   label = value,
   type,
   onClick,
 }) => (
   <button
-    onClick={type ? () => onClick({ type, value }) : null}
-    className={modifier || ''}
+    onClick={() => onClick({ type, value })}
+    className={`button button--${type}${size ? ` button--${size}` : ''}`}
   >{label}</button>
 );

@@ -1,0 +1,22 @@
+.buttons {
+  margin: 10px 20px 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+}
+
+.buttons::before {
+  content: "SL-300SV";
+  position: absolute;
+  left: 30px;
+  top: 13px;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.buttons__row {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
