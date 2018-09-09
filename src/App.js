@@ -13,7 +13,7 @@ class App extends Component {
     memory: 0,
   }
 
-  render() {console.log(this.state)
+  render() {
     return (
       <div className="calculator">
         <Display

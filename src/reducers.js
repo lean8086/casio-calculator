@@ -15,11 +15,15 @@ export default (state, action) => {
     case 'off':
       return { on: false };
     case 'plusNegative':
-      return { queue: resolve([...state.queue, '*', -1]) };
+      return {
+        queue: resolve([...state.queue, '*', -1]),
+        operationExecuted: true,
+      };
     case 'percentage':
       return {
         operations: [],
         queue: resolve([...state.operations, ...state.queue, '/', 100]),
+        operationExecuted: true,
       };
     case 'allClear':
       return {
