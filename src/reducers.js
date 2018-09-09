@@ -3,7 +3,7 @@
  */
 const resolve = (operations) => {
   try {
-    // Sorry! D:
+    // ¯\_(ツ)_/¯
     // eslint-disable-next-line
     const results = eval(operations.join(''));
     // Keep the results under 8 digits (using scientific notation)
@@ -54,7 +54,8 @@ const recallMemory = state => ({
 
 const equal = state => ({
   operations: [],
-  queue: resolve([...state.operations, ...state.queue]),
+  // Keep the same queue when an operator is in queue
+  queue: !state.operationExecuted ? resolve([...state.operations, ...state.queue]) : state.queue,
   operationExecuted: true,
 });
 
