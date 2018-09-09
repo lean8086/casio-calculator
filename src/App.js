@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Display from './components/Display';
 import Buttons from './components/Buttons';
-import reducers from './reducers';
+import reduce from './reducers';
 
 class App extends Component {
   state = {
@@ -21,7 +21,7 @@ class App extends Component {
           value={this.state.queue.join('') || 0}
         />
         <Buttons
-          onClick={action => this.setState(reducers(this.state, action))}
+          onClick={action => this.setState(reduce(this.state, action))}
         />
       </div>
     );

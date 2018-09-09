@@ -1,3 +1,6 @@
+/**
+ * Apply all the given operations
+ */
 const resolve = (operations) => {
   try {
     const results = eval(operations.join(''));
@@ -27,22 +30,22 @@ const percentage = state => ({
   operationExecuted: true,
 });
 
-const allClear = () => ({
+const clearAll = () => ({
   operations: [],
   queue: [],
   operationExecuted: true,
   on: true,
 });
 
-const memoryAdd = state => ({
+const addToMemory = state => ({
   memory: state.queue.join(''),
 });
 
-const memoryClear = () => ({
+const clearMemory = () => ({
   memory: 0,
 });
 
-const memoryRecall = state => ({
+const recallMemory = state => ({
   queue: [state.memory],
 });
 
@@ -95,10 +98,10 @@ export default (state, action) => {
     case 'off': return turnOff();
     case 'plusNegative': return plusNegative(state);
     case 'percentage': return percentage(state);
-    case 'allClear': return allClear();
-    case 'memoryAdd': return memoryAdd(state);
-    case 'memoryClear': return memoryClear();
-    case 'memoryRecall': return memoryRecall(state);
+    case 'clearAll': return clearAll();
+    case 'addToMemory': return addToMemory(state);
+    case 'clearMemory': return clearMemory();
+    case 'recallMemory': return recallMemory(state);
     case 'equal': return equal(state);
     case 'input': return input(state, action);
     case 'operator': return !state.operationExecuted ?
