@@ -14,7 +14,8 @@ const resolve = (operations) => {
 };
 
 const clear = () => ({
-  queue: [],
+  queue: [0],
+  operationExecuted: true,
 });
 
 const turnOff = () => ({
@@ -34,7 +35,7 @@ const percentage = state => ({
 
 const clearAll = () => ({
   operations: [],
-  queue: [],
+  queue: [0],
   operationExecuted: true,
   on: true,
 });
