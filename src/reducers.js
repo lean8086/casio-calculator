@@ -14,6 +14,8 @@ export default (state, action) => {
       return { queue: [] };
     case 'off':
       return { on: false };
+    case 'plusNegative':
+      return { queue: [resolve([...state.queue, '*', -1])] };
     case 'percentage':
       return {
         operations: [],
