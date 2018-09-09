@@ -6,10 +6,10 @@ export default ({ onClick }) => (
     <Button onClick={onClick} type="squareRoot" label="√" modifier="small"/>
     <Button onClick={onClick} type="off" label="OFF" modifier="small"/>
 
-    <Button onClick={onClick} label="MC"/>
-    <Button onClick={onClick} label="MR"/>
-    <Button onClick={onClick} label="M-"/>
-    <Button onClick={onClick} label="M+"/>
+    <Button onClick={onClick} type="memoryClear" label="MC"/>
+    <Button onClick={onClick} type="memoryRecall" label="MR"/>
+    <Button onClick={onClick} type="memoryClear" label="M-"/>
+    <Button onClick={onClick} type="memoryAdd" label="M+"/>
     <Button onClick={onClick} type="operator" value="/" label="÷"/>
 
     <Button onClick={onClick} type="percentage" value="%"/>

@@ -10,6 +10,7 @@ class App extends Component {
     operationExecuted: true,
     resultCalculated: false,
     on: true,
+    memory: 0,
   }
 
   render() {console.log(this.state)

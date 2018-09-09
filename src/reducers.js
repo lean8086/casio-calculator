@@ -28,6 +28,12 @@ export default (state, action) => {
         operationExecuted: true,
         on: true,
       };
+    case 'memoryAdd':
+      return { memory: state.queue.join('') };
+    case 'memoryClear':
+      return { memory: 0 };
+    case 'memoryRecall':
+      return { queue: [state.memory] };
     case 'equal':
       const resultsEqual = resolve([...state.operations, ...state.queue]);
       return {
