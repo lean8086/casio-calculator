@@ -1,8 +1,9 @@
 .buttons {
   margin: 10px 20px 30px 20px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-around;
+  align-items: flex-end;
   position: relative;
 }
 

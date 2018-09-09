@@ -17,4 +17,5 @@
   text-align: right;
   border-radius: 5px;
   box-shadow: -3px -3px 0 0 black, 3px 3px 0 0 white;
+  overflow: hidden;
 }

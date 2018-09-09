@@ -4,7 +4,15 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   font-family: sans-serif;
   background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
