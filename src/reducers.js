@@ -2,7 +2,7 @@ const resolve = operations => {
   try {
     const results = eval(operations.join(''));
     // Keep the results under 8 digits (using scientific notation)
-    return results.toString().length <= 8 ? results : results.toExponential(2);
+    return results.toString().length <= 8 ? [results] : [results.toExponential(2)];
   } catch(e) {
     return 'ERROR';
   }
@@ -15,11 +15,11 @@ export default (state, action) => {
     case 'off':
       return { on: false };
     case 'plusNegative':
-      return { queue: [resolve([...state.queue, '*', -1])] };
+      return { queue: resolve([...state.queue, '*', -1]) };
     case 'percentage':
       return {
         operations: [],
-        queue: [resolve([...state.operations, ...state.queue, '/', 100])],
+        queue: resolve([...state.operations, ...state.queue, '/', 100]),
       };
     case 'allClear':
       return {
@@ -35,10 +35,9 @@ export default (state, action) => {
     case 'memoryRecall':
       return { queue: [state.memory] };
     case 'equal':
-      const resultsEqual = resolve([...state.operations, ...state.queue]);
       return {
         operations: [],
-        queue: [resultsEqual],
+        queue: resolve([...state.operations, ...state.queue]),
         operationExecuted: true,
       };
     case 'input':
@@ -54,8 +53,8 @@ export default (state, action) => {
       if (!state.operationExecuted) {
         const resultsOperator = resolve([...state.operations, ...state.queue]);
         return {
-          operations: [resultsOperator, action.value],
-          queue: [resultsOperator],
+          operations: [...resultsOperator, action.value],
+          queue: resultsOperator,
           operationExecuted: true,
         };
       // Otherwise, replace the current operator in operations with the new one
