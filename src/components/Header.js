@@ -1,9 +1,10 @@
 import React from 'react';
+import Logo from './Logo';
 import './Header.css';
 
 export default () => (
   <header className="header" role="banner">
-    <h1 className="header__logo">CASIO</h1>
+    <Logo className="header__logo"/>
     <div className="header__panel"></div>
   </header>
 );

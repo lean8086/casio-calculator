@@ -1,15 +1,20 @@
 .screen {
-  background-color: red;
+  background-color: grey;
   position: relative;
   justify-content: center;
-  margin: 0 10px;
-  border-radius: 10px;
+  margin: 5px 10px;
+  border-radius: 8px;
 }
 
 .screen__lcd {
-  background-color: blue;
-  margin: 15px 15px 25px;
+  font-family: 'OPTICalculator';
+  font-size: 56px;
+  background-color: cyan;
+  margin: 15px 15px 22px;
+  padding: 0 10px;
   height: 95px;
   line-height: 95px;
   text-align: right;
+  border-radius: 5px;
+  box-shadow: -3px -3px 0 0 black, 3px 3px 0 0 white;
 }

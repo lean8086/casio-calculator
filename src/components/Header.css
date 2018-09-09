@@ -3,29 +3,35 @@
   flex-direction: row;
   justify-content: space-around;
   padding: 15px;
+  align-items: center;
 }
 
 .header__logo {
-  background-color: yellow;
-  width: 90px;
-  height: 20px;
+  width: 80px;
+}
+
+.header__logo path {
+  fill: grey;
 }
 
 .header__panel {
   width: 145px;
-  height: 50px;
+  height: 45px;
   background-color: black;
-  border-radius: 5px;
-  border: 5px solid blue;
+  border-radius: 8px;
+  border: 4px solid grey;
   position: relative;
 }
 
 .header__panel::after {
   content: 'TWO WAY POWER';
   position: absolute;
-  bottom: -18px;
+  bottom: -15px;
   font-size: 9px;
   text-align: center;
   left: 0;
   right: 0;
+  font-weight: bold;
+  letter-spacing: .1em;
+  transform: scale(1, .7);
 }
