@@ -1,7 +1,8 @@
 const resolve = operations => {
   try {
-    // Keep the results under 8 digits
-    return eval(operations.join(''));
+    const results = eval(operations.join(''));
+    // Keep the results under 8 digits (using scientific notation)
+    return results.toString().length <= 8 ? results : results.toExponential(2);
   } catch(e) {
     return 'ERROR';
   }
@@ -19,10 +20,10 @@ export default (state, action) => {
         on: true,
       };
     case 'equal':
-      const resultEqual = resolve([...state.operations, ...state.queue]);
+      const resultsEqual = resolve([...state.operations, ...state.queue]);
       return {
         operations: [],
-        queue: [resultEqual],
+        queue: [resultsEqual],
         operationExecuted: true,
       };
     case 'input':
@@ -36,10 +37,10 @@ export default (state, action) => {
     case 'operator':
       // Only add an operator symbol to the operations if the last element is a number
       if (!state.operationExecuted) {
-        const resultOperator = resolve([...state.operations, ...state.queue]);
+        const resultsOperator = resolve([...state.operations, ...state.queue]);
         return {
-          operations: [resultOperator, action.value],
-          queue: [resultOperator],
+          operations: [resultsOperator, action.value],
+          queue: [resultsOperator],
           operationExecuted: true,
         };
       // Otherwise, replace the current operator in operations with the new one
@@ -49,7 +50,7 @@ export default (state, action) => {
           operations: state.operations.length ?
             // When other operations exists, just add an operator
             [...state.operations.slice(0, -1), action.value] :
-            // When "equal" ("=") was pressed, user can add operator to previous result
+            // When "equal" ("=") was pressed, user can add operator to previous results
             [...state.queue, action.value],
         };
       }
