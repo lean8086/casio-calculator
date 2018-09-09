@@ -1,5 +1,5 @@
 .buttons {
-  margin: 10px 20px 30px 20px;
+  margin: 10px 20px 40px 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -11,9 +11,10 @@
   content: "SL-300SV";
   position: absolute;
   left: 30px;
-  top: 13px;
+  top: 10px;
   font-weight: bold;
   font-size: 13px;
+  color: #222;
 }
 
 .buttons__row {

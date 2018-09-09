@@ -5,10 +5,12 @@
   height: 45px;
   outline: none;
   margin: 4px;
-  background: black;
+  background-color: #333;
+  background-image: linear-gradient(to bottom, #333, #555);
   color: white;
   font-size: 30px;
   border-radius: 8px 8px 14px 14px;
+  box-shadow: inset 0 1px 0 1px #888, inset 0 0 3px 2px #222;
 }
 
 /**
@@ -26,14 +28,15 @@
 /**
  * Type modifier
  */
-.button--clear {
-  background-color: red;
+.button--clear,
+.button--clearAll {
+  background-color: #a8415f;
+  background-image: linear-gradient(to bottom, #a8415f, #a75c75);
 }
 
 .button--clearAll {
-  background-color: red;
-  border-left: 6px solid black;
-  border-right: 6px solid black;
+  border-left: 6px solid #555;
+  border-right: 6px solid #555;
   position: relative;
   font-size: 22px;
 }
@@ -46,7 +49,7 @@
   right: 0;
   text-align: center;
   font-size: 11px;
-  color: initial;
+  color: #222;
 }
 
 /* Memory buttons */

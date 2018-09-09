@@ -11,16 +11,17 @@
 }
 
 .header__logo path {
-  fill: grey;
+  fill: #555;
 }
 
 .header__panel {
   width: 145px;
   height: 45px;
-  background-color: black;
+  background-color: #271a17;
   border-radius: 8px;
-  border: 4px solid grey;
+  border: 4px solid #555;
   position: relative;
+  box-shadow: inset 1px 1px 0 #222, inset -1px -1px 0 #888;
 }
 
 .header__panel::after {

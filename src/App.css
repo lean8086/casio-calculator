@@ -1,7 +1,9 @@
 .calculator {
   width: 340px;
-  background-color: #ddd;
+  background-color: #ccc;
   display: flex;
   flex-direction: column;
   border-radius: 15px 15px 30px 30px;
+  box-shadow: 10px 10px 55px #888, inset 0 10px 0 #d8d8d8, inset 0 -5px 0 15px #bbb;
+  border: 1px solid #bbb;
 }
