@@ -21,7 +21,7 @@ export default (state, action) => {
     case 'equal':
       const resultEqual = resolve([...state.operations, ...state.queue]);
       return {
-        operations: [resultEqual],
+        operations: [],
         queue: [resultEqual],
         operationExecuted: true,
       };
@@ -46,7 +46,11 @@ export default (state, action) => {
       // For example: user can select "+" and then replace it with a "-" before introduce a number
       } else {
         return {
-          operations: [...state.operations.slice(0, -1), action.value],
+          operations: state.operations.length ?
+            // When other operations exists, just add an operator
+            [...state.operations.slice(0, -1), action.value] :
+            // When "equal" ("=") was pressed, user can add operator to previous result
+            [...state.queue, action.value],
         };
       }
     default:

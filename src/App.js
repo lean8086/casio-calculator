@@ -8,6 +8,7 @@ class App extends Component {
     operations: [],
     queue: [],
     operationExecuted: true,
+    resultCalculated: false,
     on: true,
   }
 
