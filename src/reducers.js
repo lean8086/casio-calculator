@@ -3,6 +3,8 @@
  */
 const resolve = (operations) => {
   try {
+    // Sorry! D:
+    // eslint-disable-next-line
     const results = eval(operations.join(''));
     // Keep the results under 8 digits (using scientific notation)
     return results.toString().length <= 8 ? [results] : [results.toExponential(2)];
