@@ -14,6 +14,11 @@ export default (state, action) => {
       return { queue: [] };
     case 'off':
       return { on: false };
+    case 'percentage':
+      return {
+        operations: [],
+        queue: [resolve([...state.operations, ...state.queue, '/', 100])],
+      };
     case 'allClear':
       return {
         operations: [],
