@@ -10,3 +10,5 @@ Or run locally:
 4. Go to `http://localhost:3000/`
 
 Project bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+
+![Screenshot](./screenshot.png)
