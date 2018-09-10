@@ -1,6 +1,6 @@
 # CASIO Calculator
 
-> Go to the live [demo](https://casio-calculator.now.sh)!
+> Go to the live [demo](https://lean8086.github.io/casio-calculator/)!
 
 Or run locally:
 
