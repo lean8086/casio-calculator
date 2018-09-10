@@ -15,7 +15,7 @@ class App extends Component {
     memory: 0,
   }
 
-  render() {console.log(this.state);
+  render() {
     return (
       <main className="calculator" role="main">
         <Header />
