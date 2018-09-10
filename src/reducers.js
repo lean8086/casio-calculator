@@ -24,7 +24,7 @@ const turnOff = () => ({
 
 const plusNegative = state => ({
   queue: resolve([...state.queue, '*', -1]),
-  operationExecuted: true,
+  operationExecuted: false,
 });
 
 const percentage = state => ({
@@ -50,6 +50,7 @@ const clearMemory = () => ({
 
 const recallMemory = state => ({
   queue: [state.memory],
+  operationExecuted: false,
 });
 
 const equal = state => ({
